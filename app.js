@@ -31,7 +31,7 @@ while(isEmptySelection(selection)) {
     if(selection === 'q') {
         break;
     } else if (isNaN(parseInt(selection))) {
-        let filteredProducts = products.filter((product) => product.category === selection);
+        let filteredProducts = products.filter((product) => product.category.toLowerCase() === selection.toLowerCase());
         selection = prompt(buildInitMessageForPrompt(filteredProducts));
         if(isNaN(parseInt(selection))) {
             if(selection === 'q') {
